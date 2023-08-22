@@ -1,29 +1,23 @@
 import React from "react";
-import BasicGrid from "./grid.js";
-import Blog from "./blog.js";
+import BasicGrid from "./Views/grid.js";
+import Blog from "./Views/blog.js";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Nav from "./Components/Nav.js";
+import { Container } from "@mui/material";
+import Home from "./Views/home.js";
+
 class App extends React.Component {
   render() {
     return (
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/Blog">Blogs</Link>
-            </li>
-            <li>
-              <Link to="/BasicGrid">BasicGrid</Link>
-            </li>
-          </ul>
-          Week 34
-        </nav>
-        <Routes>
-          <Route path="/Blog" element={<Blog />} />
-          <Route path="/BasicGrid" element={<BasicGrid />} />
-        </Routes>
+        <Nav />
+        <Container sx={{ pt: 4 }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/Blog" element={<Blog />} />
+            <Route path="/BasicGrid" element={<BasicGrid />} />
+          </Routes>
+        </Container>
       </div>
     );
   }
