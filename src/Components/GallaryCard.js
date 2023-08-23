@@ -4,17 +4,18 @@ import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import ButtonBase from "@mui/material/ButtonBase";
+import Card from "@mui/material/Card";
 const Img = styled("img")({
   margin: "auto",
   display: "block",
   maxWidth: "100%",
   maxHeight: "100%",
 });
-export default function ItemCard() {
+export default function GallaryCard() {
   return (
-    <Paper
+    <Card
       sx={{
-        p: 2,
+        p: 0,
         margin: "auto",
         maxWidth: 500,
         flexGrow: 1,
@@ -22,9 +23,9 @@ export default function ItemCard() {
           theme.palette.mode === "dark" ? "#1A2027" : "#fff",
       }}
     >
-      <Grid container spacing={2}>
+      <Grid container spacing={0}>
         <Grid item>
-          <ButtonBase sx={{ width: 128, height: 128 }}>
+          <ButtonBase>
             <Img
               alt="img text"
               src="https://images.unsplash.com/photo-1682695798522-6e208131916d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8"
@@ -52,6 +53,6 @@ export default function ItemCard() {
           </Grid>
         </Grid>
       </Grid>
-    </Paper>
+    </Card>
   );
 }

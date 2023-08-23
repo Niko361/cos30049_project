@@ -4,7 +4,7 @@ import Blog from "./Views/blog.js";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Nav from "./Components/Nav.js";
 import { Container } from "@mui/material";
-import Home from "./Views/home.js";
+import HomeView from "./Views/HomeView.js";
 
 class App extends React.Component {
   render() {
@@ -13,7 +13,7 @@ class App extends React.Component {
         <Nav />
         <Container sx={{ pt: 4 }}>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<HomeView />} />
             <Route path="/Blog" element={<Blog />} />
             <Route path="/BasicGrid" element={<BasicGrid />} />
           </Routes>
